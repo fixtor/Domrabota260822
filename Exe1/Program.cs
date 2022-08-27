@@ -1,12 +1,6 @@
 ﻿// Задача 47. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
 // m = 3, n = 4.
 
-Console.Clear();
-Console.Write("Введите количество строк массива: ");
-int rows = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите количество столбцов массива: ");
-int columns = Convert.ToInt32(Console.ReadLine());
-PrintArray(GetArray(rows, columns));
 
 double[,] GetArray(int m, int n)
 {
@@ -28,3 +22,10 @@ void PrintArray(double[,] inArray)
         Console.WriteLine();
     }
 }
+
+Console.Clear();
+Console.Write("Введите количество строк массива: ");
+int rows = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите количество столбцов массива: ");
+int columns = Convert.ToInt32(Console.ReadLine());
+PrintArray(GetArray(rows, columns));

@@ -38,9 +38,9 @@ void FindAverage(int[,] newArray, int column)
 
 Console.Clear();
 Console.Write("Введите количество строк массива: ");
-int rows = int.Parse(Console.ReadLine());
+int rows = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите количество столбцов массива: ");
-int columns = int.Parse(Console.ReadLine());
+int columns = Convert.ToInt32(Console.ReadLine());
 int[,] array = GetArray(rows, columns, 0, 10);
 
 PrintArray(array);

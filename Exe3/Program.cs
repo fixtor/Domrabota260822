@@ -10,6 +10,7 @@
     }
     return result;
 }
+
 void PrintArray(int[,] inArray)
 {
     for (int i = 0; i < inArray.GetLength(0); i++)
@@ -20,33 +21,18 @@ void PrintArray(int[,] inArray)
     }
 }
 
-void FindAverage(int[,] newArray)
+void FindAverage(int[,] newArray, int column)
 {
-    double tempAverage = 0;
-
-    //int[] array = new int[j];
-
-    for (int i = 0; i < newArray.GetLength(0); i++)
+    
+    for (int j = 0; j < newArray.GetLength(1); j++)
     {
-        int columnCountJ = 0; // TODO посмотреть когда обнулится значение этих переменных
-        int columnCountI = 0;
-
+        double average = 0;
+        for (int i = 0; i < newArray.GetLength(0); i++)
         {
-            Console.Write($"mas = {newArray[i, columnCountJ]}");
-            Console.Write($"columncount {columnCountJ}, ");
-            Console.WriteLine($"av = {tempAverage}");
-            tempAverage = (newArray[i, columnCountJ] + tempAverage);
-            //tempAverage = tempAverage / newArray.GetLength(0);
-            Console.WriteLine($"newAv = {tempAverage}");
+            average = average + newArray[i, j];
         }
-
-        for (int j = 0; j < newArray.GetLength(1); j++)
-        {
-            //columnCountJ ++;
-            //Console.Write($"columnI = {columnCountI}");
-            //Console.WriteLine($" arr = {newArray[columnCountI, columnCountJ]}");
-
-        }
+        average = average / column;
+        Console.WriteLine($"Среднее столбца {j} = {average}");
     }
 }
 
@@ -58,12 +44,4 @@ int columns = int.Parse(Console.ReadLine());
 int[,] array = GetArray(rows, columns, 0, 10);
 
 PrintArray(array);
-FindAverage(array);
-// if (i == columnCountJ)
-//         {
-//             Console.WriteLine($"Columncount = {i}");
-//             tempAverage += newArray[i, j];
-//             Console.WriteLine($"i = {i}, j = {j}, newArray = {newArray[i, j]}");
-//             Console.WriteLine(tempAverage / j);
-
-//         }
+FindAverage(array, columns);

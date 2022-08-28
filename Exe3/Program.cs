@@ -21,7 +21,6 @@ void PrintArray(int[,] inArray)
 
 void FindAverage(int[,] newArray, int column)
 {
-    
     for (int j = 0; j < newArray.GetLength(1); j++)
     {
         double average = 0;

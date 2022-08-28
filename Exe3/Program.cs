@@ -4,9 +4,7 @@
     for (int i = 0; i < m; i++)
     {
         for (int j = 0; j < n; j++)
-        {
             result[i, j] = new Random().Next(minValue, maxValue + 1);
-        }
     }
     return result;
 }
@@ -28,9 +26,7 @@ void FindAverage(int[,] newArray, int column)
     {
         double average = 0;
         for (int i = 0; i < newArray.GetLength(0); i++)
-        {
             average = average + newArray[i, j];
-        }
         average = average / column;
         Console.WriteLine($"Среднее столбца {j} = {average}");
     }
